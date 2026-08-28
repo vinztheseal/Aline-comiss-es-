@@ -1,0 +1,2492 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>L'Atelier d'Aline | Crochê Artesanal</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   CONFIGURAÇÕES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --rosa: #c97891;
+    --rosa-claro: #f4d8df;
+    --creme: #fff8f4;
+    --branco: #fffdfb;
+    --vinho: #6e4055;
+    --texto: #4b3540;
+    --dourado: #b58b62;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--creme);
+    color: var(--texto);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   PETALAS
+========================= */
+
+.petalas {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.petalas span {
+    position: absolute;
+    top: -40px;
+    color: #d98ca2;
+    opacity: .25;
+    animation: cair 13s linear infinite;
+}
+
+.petalas span:nth-child(1) {
+    left: 10%;
+}
+
+.petalas span:nth-child(2) {
+    left: 30%;
+    animation-delay: 4s;
+}
+
+.petalas span:nth-child(3) {
+    left: 55%;
+    animation-delay: 7s;
+}
+
+.petalas span:nth-child(4) {
+    left: 75%;
+    animation-delay: 2s;
+}
+
+.petalas span:nth-child(5) {
+    left: 90%;
+    animation-delay: 9s;
+}
+
+@keyframes cair {
+
+    0% {
+        transform: translateY(-40px) rotate(0);
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+    }
+
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: fixed;
+
+    top: 18px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(1150px, calc(100% - 30px));
+
+    padding: 13px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 50;
+
+    background: rgba(255,250,248,.82);
+
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(110,64,85,.13);
+
+    border-radius: 50px;
+
+    box-shadow:
+        0 15px 40px rgba(110,64,85,.10);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 1.6rem;
+
+    font-weight: 700;
+
+    color: var(--vinho);
+}
+
+.logo span {
+    font-size: 1.4rem;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 22px;
+
+    font-size: .76rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: .1em;
+}
+
+.navbar nav a {
+    transition: .25s;
+}
+
+.navbar nav a:hover {
+    color: var(--rosa);
+}
+
+.menu {
+    display: none;
+
+    border: none;
+
+    background: none;
+
+    font-size: 1.5rem;
+
+    color: var(--vinho);
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(255,240,245,.55),
+            rgba(255,248,245,.65)
+        ),
+        url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1800&q=85")
+        center / cover;
+
+    overflow: hidden;
+}
+
+.hero-content {
+
+    max-width: 900px;
+
+    padding: 120px 25px 70px;
+
+}
+
+.eyebrow {
+
+    font-size: .72rem;
+
+    letter-spacing: .25em;
+
+    color: var(--vinho);
+
+    font-weight: 600;
+
+    margin-bottom: 12px;
+
+}
+
+.hero h1 {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(3.3rem, 7vw, 6.5rem);
+
+    line-height: .95;
+
+    color: var(--vinho);
+
+}
+
+.hero h1 em {
+
+    color: var(--rosa);
+
+    font-weight: 500;
+
+}
+
+.hero-description {
+
+    max-width: 650px;
+
+    margin: 25px auto;
+
+    font-size: 1rem;
+
+}
+
+.botoes {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    margin-top: 28px;
+
+}
+
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 14px 24px;
+
+    border-radius: 999px;
+
+    font-size: .75rem;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: .08em;
+
+    transition: .25s;
+
+}
+
+.btn:hover {
+
+    transform: translateY(-4px);
+
+}
+
+.btn-principal {
+
+    background: var(--vinho);
+
+    color: white;
+
+    box-shadow:
+        0 10px 25px rgba(110,64,85,.22);
+
+}
+
+.btn-secundario {
+
+    border: 1px solid var(--vinho);
+
+    background: rgba(255,255,255,.5);
+
+}
+
+.hero-legenda {
+
+    position: absolute;
+
+    bottom: 28px;
+
+    width: 100%;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 1.2rem;
+
+    color: var(--vinho);
+
+}
+
+
+/* =========================
+   SEÇÕES
+========================= */
+
+.secao {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 110px 25px;
+
+}
+
+.titulo {
+
+    text-align: center;
+
+    margin-bottom: 50px;
+
+}
+
+.titulo h2 {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+
+    color: var(--vinho);
+
+    line-height: 1;
+
+}
+
+.titulo p {
+
+    max-width: 650px;
+
+    margin: 15px auto 0;
+
+}
+
+
+/* =========================
+   SOBRE
+========================= */
+
+.sobre-grid {
+
+    display: grid;
+
+    grid-template-columns: 1.1fr .9fr;
+
+    gap: 60px;
+
+    align-items: center;
+
+}
+
+.sobre-texto p {
+
+    margin-bottom: 18px;
+
+}
+
+.frase {
+
+    background: white;
+
+    padding: 45px;
+
+    border: 1px solid rgba(110,64,85,.12);
+
+    box-shadow:
+        0 20px 50px rgba(110,64,85,.08);
+
+}
+
+.frase .aspas {
+
+    font-family: Georgia, serif;
+
+    font-size: 5rem;
+
+    color: var(--rosa-claro);
+
+}
+
+.frase p {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 1.9rem;
+
+    line-height: 1.15;
+
+    margin: 10px 0;
+
+}
+
+
+/* =========================
+   BANNER
+========================= */
+
+.banner {
+
+    height: 460px;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+}
+
+.banner img {
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    filter: saturate(.75);
+
+}
+
+.banner::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(91,43,65,.28);
+
+}
+
+.banner-conteudo {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 700px;
+
+    padding: 40px 55px;
+
+    background: rgba(255,247,244,.88);
+
+}
+
+.banner h2 {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 3.5rem;
+
+    color: var(--vinho);
+
+    line-height: 1;
+
+}
+
+
+/* =========================
+   FILTROS
+========================= */
+
+.filtros {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-bottom: 40px;
+
+}
+
+.filtro {
+
+    padding: 9px 17px;
+
+    border-radius: 50px;
+
+    border: 1px solid rgba(110,64,85,.15);
+
+    background: white;
+
+    color: var(--vinho);
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    transition: .2s;
+
+}
+
+.filtro:hover,
+.filtro.ativo {
+
+    background: var(--vinho);
+
+    color: white;
+
+}
+
+
+/* =========================
+   PRODUTOS
+========================= */
+
+.produtos {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 22px;
+
+}
+
+.produto {
+
+    background: white;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(110,64,85,.10);
+
+    box-shadow:
+        0 15px 35px rgba(110,64,85,.07);
+
+    transition: .3s;
+
+}
+
+.produto:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 25px 45px rgba(110,64,85,.14);
+
+}
+
+.produto.escondido {
+
+    display: none;
+
+}
+
+.produto-img {
+
+    height: 230px;
+
+    overflow: hidden;
+
+    background: var(--rosa-claro);
+
+}
+
+.produto-img img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: .5s;
+
+}
+
+.produto:hover img {
+
+    transform: scale(1.06);
+
+}
+
+.produto-info {
+
+    padding: 22px;
+
+}
+
+.categoria {
+
+    font-size: .64rem;
+
+    letter-spacing: .17em;
+
+    text-transform: uppercase;
+
+    color: var(--rosa);
+
+}
+
+.produto h3 {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 2rem;
+
+    color: var(--vinho);
+
+    line-height: 1.1;
+
+}
+
+.produto p {
+
+    font-size: .82rem;
+
+    margin: 8px 0 15px;
+
+}
+
+.preco {
+
+    color: var(--rosa);
+
+    font-weight: 600;
+
+}
+
+.encomendar {
+
+    display: block;
+
+    margin-top: 15px;
+
+    text-align: center;
+
+    padding: 10px;
+
+    border-radius: 30px;
+
+    background: var(--vinho);
+
+    color: white;
+
+    font-size: .7rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: .08em;
+
+}
+
+
+/* =========================
+   FIOS
+========================= */
+
+.fios {
+
+    max-width: none;
+
+    background: #f8e9ed;
+
+}
+
+.fios-conteudo {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+}
+
+.grid-fios {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 18px;
+
+}
+
+.fio {
+
+    padding: 30px;
+
+    background: rgba(255,255,255,.7);
+
+    border: 1px solid rgba(110,64,85,.08);
+
+}
+
+.fio-icon {
+
+    font-size: 2rem;
+
+}
+
+.fio h3 {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 2rem;
+
+    color: var(--vinho);
+
+}
+
+.fio p {
+
+    font-size: .83rem;
+
+    margin: 6px 0 13px;
+
+}
+
+.fio strong {
+
+    font-size: .75rem;
+
+    color: var(--rosa);
+
+}
+
+.aviso {
+
+    text-align: center;
+
+    margin-top: 25px;
+
+    font-size: .7rem;
+
+    opacity: .7;
+
+}
+
+
+/* =========================
+   ENCOMENDAS
+========================= */
+
+.encomendas {
+
+    max-width: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff8f4,
+            #f4d8df
+        );
+
+}
+
+.encomenda-box {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 70px;
+
+    position: relative;
+
+    background:
+        url("https://images.unsplash.com/photo-1601655198778-0a7f7e6a9b7e?auto=format&fit=crop&w=1600&q=80")
+        center / cover;
+
+    display: grid;
+
+    grid-template-columns: 1.3fr .7fr;
+
+    gap: 60px;
+
+    overflow: hidden;
+
+}
+
+.encomenda-box::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(255,247,244,.88);
+
+}
+
+.encomenda-box > * {
+
+    position: relative;
+
+}
+
+.encomenda-box h2 {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 4rem;
+
+    line-height: .95;
+
+    color: var(--vinho);
+
+}
+
+.lista-encomenda {
+
+    border-left: 1px solid var(--rosa);
+
+    padding-left: 30px;
+
+}
+
+.lista-encomenda p {
+
+    margin: 9px 0;
+
+}
+
+
+/* =========================
+   TERMOS
+========================= */
+
+.termos {
+
+    max-width: 1100px;
+
+}
+
+.grid-termos {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+}
+
+details {
+
+    background: white;
+
+    border: 1px solid rgba(110,64,85,.10);
+
+    padding: 18px 20px;
+
+}
+
+summary {
+
+    cursor: pointer;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 1.35rem;
+
+    color: var(--vinho);
+
+    font-weight: 600;
+
+}
+
+details p {
+
+    font-size: .82rem;
+
+    margin-top: 10px;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    padding: 60px 25px;
+
+    text-align: center;
+
+    background: #5d3a4b;
+
+    color: #fff4f6;
+
+}
+
+.footer-logo {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 2.2rem;
+
+}
+
+.whatsapp {
+
+    margin-top: 10px;
+
+}
+
+.footer-links {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin: 20px 0;
+
+    font-size: .75rem;
+
+}
+
+footer small {
+
+    opacity: .65;
+
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media(max-width:850px) {
+
+    .navbar nav {
+
+        display: none;
+
+        position: absolute;
+
+        top: 62px;
+
+        left: 0;
+
+        right: 0;
+
+        padding: 20px;
+
+        background: rgba(255,250,248,.97);
+
+        border-radius: 25px;
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+    .navbar nav.aberto {
+
+        display: flex;
+
+    }
+
+    .menu {
+
+        display: block;
+
+    }
+
+    .sobre-grid,
+    .encomenda-box {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .produtos {
+
+        grid-template-columns: repeat(2,1fr);
+
+    }
+
+    .grid-fios {
+
+        grid-template-columns: repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:560px) {
+
+    .navbar {
+
+        top: 10px;
+
+    }
+
+    .hero {
+
+        background-attachment: scroll;
+
+    }
+
+    .hero h1 {
+
+        font-size: 3.4rem;
+
+    }
+
+    .secao {
+
+        padding: 75px 18px;
+
+    }
+
+    .produtos,
+    .grid-fios,
+    .grid-termos {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .produto-img {
+
+        height: 210px;
+
+    }
+
+    .banner {
+
+        height: 390px;
+
+    }
+
+    .banner-conteudo {
+
+        margin: 18px;
+
+        padding: 30px 22px;
+
+    }
+
+    .banner h2 {
+
+        font-size: 2.8rem;
+
+    }
+
+    .encomenda-box {
+
+        padding: 40px 25px;
+
+    }
+
+    .encomenda-box h2 {
+
+        font-size: 2.9rem;
+
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- PÉTALAS -->
+
+<div class="petalas">
+
+    <span>✿</span>
+    <span>❀</span>
+    <span>✿</span>
+    <span>❀</span>
+    <span>✿</span>
+
+</div>
+
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+    <a href="#inicio" class="logo">
+
+        <span>🧶</span>
+
+        L'Atelier d'Aline
+
+    </a>
+
+
+    <button class="menu">
+        ☰
+    </button>
+
+
+    <nav>
+
+        <a href="#inicio">
+            Início
+        </a>
+
+        <a href="#atelier">
+            O Ateliê
+        </a>
+
+        <a href="#produtos">
+            Peças
+        </a>
+
+        <a href="#fios">
+            Fios
+        </a>
+
+        <a href="#encomendas">
+            Encomendas
+        </a>
+
+        <a href="#termos">
+            Termos
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section
+    class="hero"
+    id="inicio"
+>
+
+    <div class="hero-content">
+
+        <p class="eyebrow">
+            BIENVENUE • ARTESANATO • CROCHÊ
+        </p>
+
+
+        <h1>
+
+            Um pequeno ateliê,
+
+            <br>
+
+            <em>
+                mil histórias em cada ponto.
+            </em>
+
+        </h1>
+
+
+        <p class="hero-description">
+
+            Peças feitas à mão com delicadeza,
+            inspiração francesa e muito carinho.
+
+        </p>
+
+
+        <div class="botoes">
+
+            <a
+                href="#produtos"
+                class="btn btn-principal"
+            >
+                Ver nossas peças
+            </a>
+
+
+            <a
+                href="#encomendas"
+                class="btn btn-secundario"
+            >
+                Fazer uma encomenda
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-legenda">
+
+        ♡ feito à mão, ponto por ponto
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ATELIÊ
+========================= -->
+
+<section
+    class="secao"
+    id="atelier"
+>
+
+    <div class="titulo">
+
+        <p class="eyebrow">
+            NOTRE ATELIER
+        </p>
+
+        <h2>
+            Feito com calma,
+            carinho e criatividade.
+        </h2>
+
+    </div>
+
+
+    <div class="sobre-grid">
+
+
+        <div class="sobre-texto">
+
+            <p>
+
+                Bem-vindo ao pequeno ateliê
+                de Aline.
+
+            </p>
+
+            <p>
+
+                Cada peça é produzida
+                artesanalmente, respeitando
+                o tempo de cada ponto e dando
+                atenção aos pequenos detalhes.
+
+            </p>
+
+            <p>
+
+                Nosso objetivo é criar peças
+                que tragam aconchego, beleza
+                e aquele sentimento especial
+                de receber algo feito
+                especialmente para você.
+
+            </p>
+
+        </div>
+
+
+        <div class="frase">
+
+            <span class="aspas">
+                “
+            </span>
+
+            <p>
+
+                Cada fio começa uma história.
+                Cada ponto transforma essa
+                história em algo único.
+
+            </p>
+
+            <small>
+                — Aline
+            </small>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     BANNER
+========================= -->
+
+<section class="banner">
+
+    <img
+        src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1800&q=85"
+        alt="Flores de um jardim"
+    >
+
+    <div class="banner-conteudo">
+
+        <p class="eyebrow">
+            UNE PETITE COLLECTION
+        </p>
+
+        <h2>
+            Delicadeza em forma de crochê.
+        </h2>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRODUTOS
+========================= -->
+
+<section
+    class="secao"
+    id="produtos"
+>
+
+    <div class="titulo">
+
+        <p class="eyebrow">
+            NOS CRÉATIONS
+        </p>
+
+        <h2>
+            Nossas peças
+        </h2>
+
+        <p>
+            Escolha uma peça pronta ou
+            converse conosco para criar
+            algo personalizado.
+        </p>
+
+    </div>
+
+
+    <!-- FILTROS -->
+
+    <div class="filtros">
+
+        <button
+            class="filtro ativo"
+            data-categoria="todos"
+        >
+            Todos
+        </button>
+
+        <button
+            class="filtro"
+            data-categoria="amigurumi"
+        >
+            Amigurumis
+        </button>
+
+        <button
+            class="filtro"
+            data-categoria="acessorio"
+        >
+            Acessórios
+        </button>
+
+        <button
+            class="filtro"
+            data-categoria="decoracao"
+        >
+            Decoração
+        </button>
+
+        <button
+            class="filtro"
+            data-categoria="cozinha"
+        >
+            Cozinha
+        </button>
+
+        <button
+            class="filtro"
+            data-categoria="bebe"
+        >
+            Bebês
+        </button>
+
+    </div>
+
+
+    <div class="produtos">
+
+
+        <!-- URSINHO -->
+
+        <article
+            class="produto"
+            data-categoria="amigurumi"
+        >
+
+            <div class="produto-img">
+
+                <img
+                    src="https://images.unsplash.com/photo-1589652717521-10c0d092dea9?auto=format&fit=crop&w=900&q=80"
+                    alt="Ursinho de crochê"
+                >
+
+            </div>
+
+            <div class="produto-info">
+
+                <span class="categoria">
+                    Amigurumi
+                </span>
+
+                <h3>
+                    Ursinho
+                </h3>
+
+                <p>
+                    Ursinho artesanal,
+                    perfeito para presentear.
+                </p>
+
+                <strong class="preco">
+                    R$ 75,00
+                </strong>
+
+                <a
+                    class="encomendar"
+                    href="https://wa.me/554195677131?text=Ol%C3%A1%2C%20Aline%21%20Gostaria%20de%20encomendar%20o%20Ursinho%20de%20croch%C3%AA."
+                    target="_blank"
+                >
+                    Encomendar
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- COELHO -->
+
+        <article
+            class="produto"
+            data-categoria="amigurumi"
+        >
+
+            <div class="produto-img">
+
+                <img
+                    src="https://images.unsplash.com/photo-1589652717406-1c69b3e4e9d8?auto=format&fit=crop&w=900&q=80"
+                    alt="Coelhinho artesanal"
+                >
+
+            </div>
+
+            <div class="produto-info">
+
+                <span class="categoria">
+                    Amigurumi
+                </span>
+
+                <h3>
+                    Coelhinho
+                </h3>
+
+                <p>
+                    Uma peça delicada
+                    para presentear.
+                </p>
+
+                <strong class="preco">
+                    R$ 70,00
+                </strong>
+
+                <a
+                    class="encomendar"
+                    href="https://wa.me/554195677131?text=Ol%C3%A1%2C%20Aline%21%20Gostaria%20de%20encomendar%20o%20Coelhinho%20de%20croch%C3%AA."
+                    target="_blank"
+                >
+                    Encomendar
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- GATINHO -->
+
+        <article
+            class="produto"
+            data-categoria="amigurumi"
+        >
+
+            <div class="produto-img">
+
+                <img
+                    src="https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?auto=format&fit=crop&w=900&q=80"
+                    alt="Gatinho"
+                >
+
+            </div>
+
+            <div class="produto-info">
+
+                <span class="categoria">
+                    Amigurumi
+                </span>
+
+                <h3>
+                    Gatinho
+                </h3>
+
+                <p>
+                    Artesanal, fofo
+                    e personalizável.
+                </p>
+
+                <strong class="preco">
+                    R$ 65,00
+                </strong>
+
+                <a
+                    class="encomendar"
+                    href="https://wa.me/554195677131?text=Ol%C3%A1%2C%20Aline%21%20Gostaria%20de%20encomendar%20o%20Gatinho%20de%20croch%C3%AA."
+                    target="_blank"
+                >
+                    Encomendar
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- BOLSA -->
+
+        <article
+            class="produto"
+            data-categoria="acessorio"
+        >
+
+            <div class="produto-img">
+
+                <img
+                    src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=900&q=80"
+                    alt="Bolsa artesanal"
+                >
+
+            </div>
+
+            <div class="produto-info">
+
+                <span class="categoria">
+                    Acessório
+                </span>
+
+                <h3>
+                    Bolsa de Crochê
+                </h3>
+
+                <p>
+                    Modelos pequenos,
+                    médios e grandes.
+                </p>
+
+                <strong class="preco">
+                    A partir de R$ 85,00
+                </strong>
+
+                <a
+                    class="encomendar"
+                    href="https://wa.me/554195677131?text=Ol%C3%A1%2C%20Aline%21%20Gostaria%20de%20saber%20sobre%20as%20bolsas%20de%20croch%C3%AA."
+                    target="_blank"
+                >
+                    Encomendar
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- CHAVEIRO -->
+
+        <article
+            class="produto"
+            data-categoria="acessorio"
+        >
+
+            <div class="produto-img">
+
+                <img
+                    src="https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=900&q=80"
+                    alt="Peça artesanal"
+                >
+
+            </div>
+
+            <div class="produto-info">
+
+                <span class="categoria">
+                    Acessório
+                </span>
+
+                <h3>
+                    Chaveiro Amigurumi
+                </h3>
+
+                <p>
+                    Pequenos personagens
+                    para levar com você.
+                </p>
+
+                <strong class="preco">
+                    A partir de R$ 18,00
+                </strong>
+
+                <a
+                    class="encomendar"
+                    href="https://wa.me/554195677131?text=Ol%C3%A1%2C%20Aline%21%20Gostaria%20de%20encomendar%20um%20chaveiro%20de%20croch%C3%AA."
+                    target="_blank"
+                >
+                    Encomendar
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- SOUSPLAT -->
+
+        <article
+            class="produto"
+            data-categoria="decoracao"
+        >
+
+            <div class="produto-img">
+
+                <img
+                    src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80"
+                    alt="Decoração artesanal"
+                >
+
+            </div>
+
+            <div class="produto-info">
+
+                <span class="categoria">
+                    Decoração
+                </span>
+
+                <h3>
+                    Sousplat
+                </h3>
+
+                <p>
+                    Peça artesanal para
+                    uma mesa especial.
+                </p>
+
+                <strong class="preco">
+                    R$ 22,00
+                </strong>
+
+                <a
+                    class="encomendar"
+                    href="https://wa.me/554195677131?text=Ol%C3%A1%2C%20Aline%21%20Gostaria%20de%20encomendar%20um%20Sousplat%20de%20croch%C3%AA."
+                    target="_blank"
+                >
+                    Encomendar
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- CAMINHO DE MESA -->
+
+        <article
+            class="produto"
+            data-categoria="decoracao"
+        >
+
+            <div class="produto-img">
+
+                <img
+                    src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=900&q=80"
+                    alt="Mesa decorada"
+                >
+
+            </div>
+
+            <div class="produto-info">
+
+                <span class="categoria">
+                    Decoração
+                </span>
+
+                <h3>
+                    Caminho de Mesa
+                </h3>
+
+                <p>
+                    Elegância artesanal
+                    para sua casa.
+                </p>
+
+                <strong class="preco">
+                    A partir de R$ 90,00
+                </strong>
+
+                <a
+                    class="encomendar"
+                    href="https://wa.me/554195677131?text=Ol%C3%A1%2C%20Aline%21%20Gostaria%20de%20saber%20sobre%20os%20caminhos%20de%20mesa."
+                    target="_blank"
+                >
+                    Encomendar
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- PUXA SACO -->
+
+        <article
+            class="produto"
+            data-categoria="cozinha"
+        >
+
+            <div class="produto-img">
+
+                <img
+                    src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=900&q=80"
+                    alt="Cozinha decorada"
+                >
+
+            </div>
+
+            <div class="produto-info">
+
+                <span class="categoria">
+                    Cozinha
+                </span>
+
+                <h3>
+                    Puxa-Saco
+                </h3>
+
+                <p>
+                    Prático e bonito
+                    para organizar a cozinha.
+                </p>
+
+                <strong class="preco">
+                    R$ 55,00
+                </strong>
+
+                <a
+                    class="encomendar"
+                    href="https://wa.me/554195677131?text=Ol%C3%A1%2C%20Aline%21%20Gostaria%20de%20encomendar%20um%20Puxa-Saco."
+                    target="_blank"
+                >
+                    Encomendar
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- KIT BEBÊ -->
+
+        <article
+            class="produto"
+            data-categoria="bebe"
+        >
+
+            <div class="produto-img">
+
+                <img
+                    src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=900&q=80"
+                    alt="Kit para bebê"
+                >
+
+            </div>
+
+            <div class="produto-info">
+
+                <span class="categoria">
+                    Bebês
+                </span>
+
+                <h3>
+                    Kit Bebê
+                </h3>
+
+                <p>
+                    Touca + sapatinho
+                    feitos artesanalmente.
+                </p>
+
+                <strong class="preco">
+                    R$ 75,00
+                </strong>
+
+                <a
+                    class="encomendar"
+                    href="https://wa.me/554195677131?text=Ol%C3%A1%2C%20Aline%21%20Gostaria%20de%20encomendar%20um%20Kit%20Beb%C3%AA."
+                    target="_blank"
+                >
+                    Encomendar
+                </a>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FIOS
+========================= -->
+
+<section
+    class="secao fios"
+    id="fios"
+>
+
+    <div class="fios-conteudo">
+
+        <div class="titulo">
+
+            <p class="eyebrow">
+                LES FILS
+            </p>
+
+            <h2>
+                Tipos de fios
+            </h2>
+
+            <p>
+                A escolha do fio ajuda a definir
+                textura, resistência e acabamento.
+            </p>
+
+        </div>
+
+
+        <div class="grid-fios">
+
+
+            <div class="fio">
+
+                <span class="fio-icon">
+                    🌸
+                </span>
+
+                <h3>
+                    Anne
+                </h3>
+
+                <p>
+                    Fino e versátil.
+                    Ótimo para detalhes,
+                    amigurumis e peças delicadas.
+                </p>
+
+                <strong>
+                    R$ 20–29 / novelo*
+                </strong>
+
+            </div>
+
+
+            <div class="fio">
+
+                <span class="fio-icon">
+                    ✨
+                </span>
+
+                <h3>
+                    Charme
+                </h3>
+
+                <p>
+                    Algodão com boa definição
+                    de pontos, indicado para
+                    diversas peças.
+                </p>
+
+                <strong>
+                    R$ 17–27 / novelo*
+                </strong>
+
+            </div>
+
+
+            <div class="fio">
+
+                <span class="fio-icon">
+                    🧸
+                </span>
+
+                <h3>
+                    Amigurumi
+                </h3>
+
+                <p>
+                    Especialmente interessante
+                    para bichinhos, personagens
+                    e miniaturas.
+                </p>
+
+                <strong>
+                    R$ 14–25 / novelo*
+                </strong>
+
+            </div>
+
+
+            <div class="fio">
+
+                <span class="fio-icon">
+                    ☁️
+                </span>
+
+                <h3>
+                    Pelúcia
+                </h3>
+
+                <p>
+                    Textura macia para peças
+                    fofinhas e aconchegantes.
+                </p>
+
+                <strong>
+                    R$ 15–23 / novelo*
+                </strong>
+
+            </div>
+
+
+            <div class="fio">
+
+                <span class="fio-icon">
+                    🧵
+                </span>
+
+                <h3>
+                    Fio de Malha
+                </h3>
+
+                <p>
+                    Mais encorpado, indicado
+                    para bolsas, cestos
+                    e decoração.
+                </p>
+
+                <strong>
+                    R$ 18–40 / novelo*
+                </strong>
+
+            </div>
+
+
+            <div class="fio">
+
+                <span class="fio-icon">
+                    🌿
+                </span>
+
+                <h3>
+                    Barbante
+                </h3>
+
+                <p>
+                    Resistente e versátil
+                    para tapetes, cozinha
+                    e decoração.
+                </p>
+
+                <strong>
+                    R$ 20–35 / novelo*
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+        <p class="aviso">
+
+            *Valores de referência.
+            O preço pode variar conforme marca,
+            cor, peso, loja e disponibilidade.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ENCOMENDAS
+========================= -->
+
+<section
+    class="secao encomendas"
+    id="encomendas"
+>
+
+    <div class="encomenda-box">
+
+
+        <div>
+
+            <p class="eyebrow">
+                SUR MESURE
+            </p>
+
+            <h2>
+                Quer algo feito
+                especialmente
+                para você?
+            </h2>
+
+            <br>
+
+            <p>
+
+                Escolha cores, tamanho,
+                modelo, tipo de fio e detalhes.
+
+                Nós transformamos sua ideia
+                em uma peça artesanal.
+
+            </p>
+
+            <br>
+
+            <a
+                class="btn btn-principal"
+                href="https://wa.me/554195677131?text=Ol%C3%A1%2C%20Aline%21%20Gostaria%20de%20fazer%20uma%20encomenda%20personalizada."
+                target="_blank"
+            >
+
+                Falar com Aline
+
+            </a>
+
+        </div>
+
+
+        <div class="lista-encomenda">
+
+            <p>
+                🎨 Cores
+            </p>
+
+            <p>
+                🧶 Tipo de fio
+            </p>
+
+            <p>
+                📏 Tamanho
+            </p>
+
+            <p>
+                🌷 Modelo
+            </p>
+
+            <p>
+                ✨ Acabamentos
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TERMOS
+========================= -->
+
+<section
+    class="secao termos"
+    id="termos"
+>
+
+    <div class="titulo">
+
+        <p class="eyebrow">
+            CONDITIONS
+        </p>
+
+        <h2>
+            Termos e condições
+        </h2>
+
+    </div>
+
+
+    <div class="grid-termos">
+
+
+        <details open>
+
+            <summary>
+                🧶 Encomendas
+            </summary>
+
+            <p>
+
+                As peças dependem da disponibilidade
+                de materiais e da agenda de produção.
+                Personalizações são combinadas antes
+                do início do trabalho.
+
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                🎨 Personalização
+            </summary>
+
+            <p>
+
+                Quando disponível, o cliente pode
+                escolher cores, tamanho, modelo,
+                fio e detalhes.
+
+                Alterações depois do início da
+                produção podem mudar prazo e valor.
+
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                💰 Valores e pagamento
+            </summary>
+
+            <p>
+
+                Os preços do catálogo são referências.
+                O valor final é confirmado antes
+                da produção.
+
+                A encomenda começa após a confirmação
+                do pagamento ou sinal combinado.
+
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                ⏰ Prazo
+            </summary>
+
+            <p>
+
+                Como as peças são feitas à mão,
+                o prazo varia conforme complexidade
+                e fila de pedidos.
+
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                📦 Entrega
+            </summary>
+
+            <p>
+
+                As opções de entrega ou retirada
+                serão informadas no momento da compra.
+
+                O frete, quando houver, pode ser
+                cobrado separadamente.
+
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                🧵 Peças artesanais
+            </summary>
+
+            <p>
+
+                Pequenas diferenças de tamanho,
+                formato, pontos e acabamento são
+                naturais em produtos feitos à mão.
+
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                🔄 Trocas e problemas
+            </summary>
+
+            <p>
+
+                Se houver algum problema relacionado
+                à produção, entre em contato para
+                que a situação seja analisada e
+                possamos buscar uma solução.
+
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary>
+                📸 Fotos
+            </summary>
+
+            <p>
+
+                Podemos fotografar encomendas para
+                divulgação.
+
+                Caso o cliente não queira que sua
+                peça seja publicada, basta informar
+                antes da divulgação.
+
+            </p>
+
+        </details>
+
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        🧶 L'Atelier d'Aline
+
+    </div>
+
+    <p>
+        Feito à mão, ponto por ponto. ♡
+    </p>
+
+
+    <p class="whatsapp">
+
+        📱 WhatsApp:
+        +55 (41) 9567-7131
+
+    </p>
+
+
+    <div class="footer-links">
+
+        <a href="#produtos">
+            Peças
+        </a>
+
+        <a href="#encomendas">
+            Encomendas
+        </a>
+
+        <a href="#termos">
+            Termos
+        </a>
+
+    </div>
+
+
+    <small>
+
+        © 2026 L'Atelier d'Aline
+        • Todos os direitos reservados.
+
+    </small>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   MENU MOBILE
+========================= */
+
+const menu =
+    document.querySelector(".menu");
+
+const nav =
+    document.querySelector(".navbar nav");
+
+
+menu.addEventListener("click", () => {
+
+    nav.classList.toggle("aberto");
+
+});
+
+
+document
+    .querySelectorAll(".navbar nav a")
+    .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            nav.classList.remove("aberto");
+
+        });
+
+    });
+
+
+/* =========================
+   FILTRO DOS PRODUTOS
+========================= */
+
+const filtros =
+    document.querySelectorAll(".filtro");
+
+const produtos =
+    document.querySelectorAll(".produto");
+
+
+filtros.forEach(filtro => {
+
+    filtro.addEventListener("click", () => {
+
+
+        filtros.forEach(item => {
+
+            item.classList.remove("ativo");
+
+        });
+
+
+        filtro.classList.add("ativo");
+
+
+        const categoria =
+            filtro.dataset.categoria;
+
+
+        produtos.forEach(produto => {
+
+
+            if (
+                categoria === "todos" ||
+                produto.dataset.categoria === categoria
+            ) {
+
+                produto.classList.remove("escondido");
+
+            } else {
+
+                produto.classList.add("escondido");
+
+            }
+
+        });
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
