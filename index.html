@@ -8,15 +8,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
-/* =========================================================
-   RESET
-========================================================= */
-
 *{
     margin:0;
     padding:0;
@@ -34,19 +28,15 @@ body{
     line-height:1.7;
 }
 
+button,
+a{
+    font-family:inherit;
+}
+
 a{
     text-decoration:none;
     color:inherit;
 }
-
-button{
-    font-family:inherit;
-}
-
-
-/* =========================================================
-   VARIÁVEIS
-========================================================= */
 
 :root{
     --vinho:#704356;
@@ -59,9 +49,9 @@ button{
 }
 
 
-/* =========================================================
-   FLORES DECORATIVAS
-========================================================= */
+/* ==============================
+   FLORES
+============================== */
 
 .flores{
     position:fixed;
@@ -80,84 +70,53 @@ button{
     animation:queda 14s linear infinite;
 }
 
-.flores span:nth-child(1){
-    left:8%;
-}
-
-.flores span:nth-child(2){
-    left:27%;
-    animation-delay:4s;
-}
-
-.flores span:nth-child(3){
-    left:48%;
-    animation-delay:8s;
-}
-
-.flores span:nth-child(4){
-    left:70%;
-    animation-delay:2s;
-}
-
-.flores span:nth-child(5){
-    left:90%;
-    animation-delay:10s;
-}
+.flores span:nth-child(1){left:8%}
+.flores span:nth-child(2){left:27%;animation-delay:4s}
+.flores span:nth-child(3){left:48%;animation-delay:8s}
+.flores span:nth-child(4){left:70%;animation-delay:2s}
+.flores span:nth-child(5){left:90%;animation-delay:10s}
 
 @keyframes queda{
     0%{
         transform:translateY(-50px) rotate(0deg);
     }
-
     100%{
         transform:translateY(110vh) rotate(360deg);
     }
 }
 
 
-/* =========================================================
+/* ==============================
    NAVBAR
-========================================================= */
+============================== */
 
 .navbar{
     position:fixed;
-
     top:18px;
     left:50%;
-
     transform:translateX(-50%);
-
     width:min(1180px,calc(100% - 30px));
-
     padding:13px 22px;
-
-    background:rgba(255,250,248,.86);
-
+    background:rgba(255,250,248,.88);
     backdrop-filter:blur(18px);
-
     border:1px solid rgba(112,67,86,.12);
-
     border-radius:50px;
-
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     z-index:500;
-
     box-shadow:0 15px 45px rgba(112,67,86,.10);
 }
 
 .logo{
     font-family:'Cormorant Garamond',serif;
-
     font-size:1.55rem;
-
     font-weight:700;
-
     color:var(--vinho);
-
     white-space:nowrap;
+    border:0;
+    background:none;
+    cursor:pointer;
 }
 
 .nav-links{
@@ -169,17 +128,11 @@ button{
 .nav-links button{
     border:0;
     background:none;
-
     color:var(--texto);
-
     cursor:pointer;
-
     font-size:.70rem;
-
     letter-spacing:.08em;
-
     text-transform:uppercase;
-
     transition:.25s;
 }
 
@@ -190,27 +143,21 @@ button{
 
 .menu{
     display:none;
-
     border:0;
     background:none;
-
     font-size:1.5rem;
-
     color:var(--vinho);
-
     cursor:pointer;
 }
 
 
-/* =========================================================
-   PÁGINAS / ABAS
-========================================================= */
+/* ==============================
+   ABAS
+============================== */
 
 .pagina{
     display:none;
-
     min-height:100vh;
-
     animation:entrada .45s ease;
 }
 
@@ -219,126 +166,92 @@ button{
 }
 
 @keyframes entrada{
-
     from{
         opacity:0;
         transform:translateY(12px);
     }
-
     to{
         opacity:1;
         transform:translateY(0);
     }
-
 }
 
 
-/* =========================================================
+/* ==============================
    HERO
-========================================================= */
+============================== */
 
 .hero{
     min-height:100vh;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     text-align:center;
-
     position:relative;
-
     overflow:hidden;
 
     background:
         linear-gradient(
             rgba(255,238,244,.60),
-            rgba(255,249,246,.82)
+            rgba(255,249,246,.84)
         ),
-
-        url("https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=1900&q=85")
-
+        url("https://images.unsplash.com/photo-1602523961358-f9f03dd557db?auto=format&fit=crop&w=1900&q=85")
         center/cover;
 }
 
 .hero-content{
     max-width:900px;
-
     padding:140px 25px 80px;
 }
 
 .eyebrow{
     font-size:.68rem;
-
     text-transform:uppercase;
-
     letter-spacing:.28em;
-
     color:var(--vinho);
-
     font-weight:600;
-
     margin-bottom:15px;
 }
 
 .hero h1{
     font-family:'Cormorant Garamond',serif;
-
     font-size:clamp(3.5rem,8vw,7rem);
-
     color:var(--vinho);
-
     line-height:.88;
-
     font-weight:600;
 }
 
 .hero h1 em{
     color:var(--rosa);
-
     font-weight:500;
 }
 
 .hero-text{
     max-width:650px;
-
     margin:28px auto;
-
     font-size:.95rem;
 }
 
 .botoes{
     display:flex;
-
     justify-content:center;
-
     gap:12px;
-
     flex-wrap:wrap;
-
     margin-top:28px;
 }
 
 .btn{
     border-radius:50px;
-
     padding:14px 25px;
-
     display:inline-flex;
-
     justify-content:center;
-
     align-items:center;
-
     font-size:.70rem;
-
     font-weight:600;
-
     text-transform:uppercase;
-
     letter-spacing:.09em;
-
     transition:.3s;
+    cursor:pointer;
 }
 
 .btn:hover{
@@ -347,73 +260,52 @@ button{
 
 .btn-principal{
     background:var(--vinho);
-
     color:white;
-
     box-shadow:0 10px 25px rgba(112,67,86,.20);
 }
 
 .btn-secundario{
     border:1px solid var(--vinho);
-
     background:rgba(255,255,255,.55);
-
     color:var(--vinho);
 }
 
 .hero-frase{
     position:absolute;
-
     bottom:25px;
-
     font-family:'Cormorant Garamond',serif;
-
     color:var(--vinho);
-
     font-size:1.2rem;
 }
 
 
-/* =========================================================
-   CABEÇALHO DAS PÁGINAS
-========================================================= */
+/* ==============================
+   CABEÇALHOS
+============================== */
 
 .page-header{
     min-height:58vh;
-
     padding:160px 25px 80px;
-
     display:flex;
-
     flex-direction:column;
-
     justify-content:center;
-
     align-items:center;
-
     text-align:center;
 
     background:
-
         linear-gradient(
             rgba(255,240,245,.78),
             rgba(255,249,246,.94)
         ),
-
-        url("https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1900&q=85")
-
+        url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1900&q=85")
         center/cover;
 }
 
 .page-header h1{
     font-family:'Cormorant Garamond',serif;
-
     font-size:clamp(3.2rem,7vw,6rem);
-
     line-height:.9;
-
     color:var(--vinho);
-
     margin-bottom:20px;
 }
 
@@ -422,62 +314,49 @@ button{
 }
 
 
-/* =========================================================
+/* ==============================
    SEÇÕES
-========================================================= */
+============================== */
 
 .secao{
     max-width:1150px;
-
     margin:auto;
-
     padding:100px 25px;
 }
 
 .titulo{
     text-align:center;
-
     margin-bottom:50px;
 }
 
 .titulo h2{
     font-family:'Cormorant Garamond',serif;
-
     font-size:clamp(2.7rem,5vw,4.5rem);
-
     color:var(--vinho);
-
     line-height:.95;
 }
 
 .titulo p:last-child{
     max-width:650px;
-
     margin:15px auto 0;
 }
 
 
-/* =========================================================
+/* ==============================
    SOBRE
-========================================================= */
+============================== */
 
 .sobre-grid{
     display:grid;
-
     grid-template-columns:1fr 1fr;
-
     gap:60px;
-
     align-items:center;
 }
 
 .sobre-texto h2{
     font-family:'Cormorant Garamond',serif;
-
     color:var(--vinho);
-
     font-size:3.3rem;
-
     line-height:1;
 }
 
@@ -487,145 +366,105 @@ button{
 
 .frase{
     background:white;
-
     padding:45px;
-
     border:1px solid rgba(112,67,86,.10);
-
     box-shadow:0 20px 50px rgba(112,67,86,.08);
 }
 
 .aspas{
     font-family:Georgia,serif;
-
     font-size:5rem;
-
     line-height:.5;
-
     color:var(--rosa-claro);
 }
 
 .frase p{
     font-family:'Cormorant Garamond',serif;
-
     font-size:2rem;
-
     line-height:1.15;
-
     margin:20px 0;
 }
 
 
-/* =========================================================
+/* ==============================
    BANNER
-========================================================= */
+============================== */
 
 .banner{
     height:430px;
-
     position:relative;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     text-align:center;
-
     overflow:hidden;
 }
 
 .banner img{
     position:absolute;
-
     width:100%;
     height:100%;
-
     object-fit:cover;
-
     filter:saturate(.7);
 }
 
 .banner::after{
     content:"";
-
     position:absolute;
-
     inset:0;
-
     background:rgba(91,52,69,.28);
 }
 
 .banner-conteudo{
     position:relative;
-
     z-index:2;
-
     max-width:700px;
-
     padding:45px 60px;
-
     background:rgba(255,249,246,.90);
 }
 
 .banner-conteudo h2{
     font-family:'Cormorant Garamond',serif;
-
     font-size:3.6rem;
-
     color:var(--vinho);
-
     line-height:.95;
 }
 
 
-/* =========================================================
+/* ==============================
    PRODUTOS
-========================================================= */
+============================== */
 
 .produtos{
     display:grid;
-
     grid-template-columns:repeat(3,1fr);
-
     gap:22px;
 }
 
 .produto{
     background:white;
-
     border:1px solid rgba(112,67,86,.10);
-
     overflow:hidden;
-
     box-shadow:0 15px 35px rgba(112,67,86,.07);
-
     transition:.3s;
 }
 
 .produto:hover{
     transform:translateY(-7px);
-
     box-shadow:0 25px 50px rgba(112,67,86,.14);
 }
 
 .produto-img{
     height:245px;
-
     overflow:hidden;
-
     background:var(--rosa-claro);
 }
 
 .produto-img img{
     width:100%;
     height:100%;
-
     object-fit:cover;
-
     display:block;
-
     transition:.5s;
 }
 
@@ -639,59 +478,40 @@ button{
 
 .categoria{
     color:var(--rosa);
-
     text-transform:uppercase;
-
     font-size:.62rem;
-
     letter-spacing:.16em;
 }
 
 .produto h3{
     font-family:'Cormorant Garamond',serif;
-
     color:var(--vinho);
-
     font-size:2rem;
-
     line-height:1.1;
-
     margin-top:3px;
 }
 
 .produto p{
     font-size:.80rem;
-
     margin:9px 0 15px;
 }
 
 .preco{
     color:var(--rosa);
-
     font-size:.85rem;
 }
 
 .encomendar{
     display:block;
-
     text-align:center;
-
     background:var(--vinho);
-
     color:white;
-
     padding:10px;
-
     margin-top:15px;
-
     border-radius:30px;
-
     font-size:.65rem;
-
     text-transform:uppercase;
-
     letter-spacing:.08em;
-
     transition:.25s;
 }
 
@@ -700,29 +520,27 @@ button{
 }
 
 
-/* =========================================================
+/* ==============================
    FIOS
-========================================================= */
+============================== */
 
 .fios-area{
     background:#f8e9ed;
+    max-width:none;
+    padding-left:max(25px,calc((100% - 1100px)/2));
+    padding-right:max(25px,calc((100% - 1100px)/2));
 }
 
 .grid-fios{
     display:grid;
-
     grid-template-columns:repeat(3,1fr);
-
     gap:18px;
 }
 
 .fio{
     padding:30px;
-
     background:rgba(255,255,255,.72);
-
     border:1px solid rgba(112,67,86,.08);
-
     transition:.25s;
 }
 
@@ -736,70 +554,54 @@ button{
 
 .fio h3{
     font-family:'Cormorant Garamond',serif;
-
     color:var(--vinho);
-
     font-size:2rem;
 }
 
 .fio p{
     font-size:.80rem;
-
     margin:7px 0 14px;
 }
 
 .fio strong{
     color:var(--rosa);
-
     font-size:.75rem;
 }
 
 .aviso{
     text-align:center;
-
     margin-top:25px;
-
     font-size:.68rem;
-
     opacity:.65;
 }
 
 
-/* =========================================================
-   COMO FUNCIONA
-========================================================= */
+/* ==============================
+   ETAPAS
+============================== */
 
 .etapas{
     display:grid;
-
     grid-template-columns:repeat(4,1fr);
-
     gap:18px;
 }
 
 .etapa{
     text-align:center;
-
     padding:30px 20px;
-
     background:white;
-
     border:1px solid rgba(112,67,86,.09);
 }
 
 .numero{
     font-family:'Cormorant Garamond',serif;
-
     font-size:2.8rem;
-
     color:var(--rosa);
 }
 
 .etapa h3{
     font-family:'Cormorant Garamond',serif;
-
     color:var(--vinho);
-
     font-size:1.8rem;
 }
 
@@ -808,52 +610,38 @@ button{
 }
 
 
-/* =========================================================
+/* ==============================
    ENCOMENDAS
-========================================================= */
+============================== */
 
 .encomenda-box{
     max-width:1100px;
-
     margin:auto;
-
     padding:70px;
-
     position:relative;
-
     overflow:hidden;
-
     display:grid;
-
     grid-template-columns:1.2fr .8fr;
-
     gap:60px;
 
     background:
-
         linear-gradient(
             rgba(255,249,246,.88),
             rgba(255,238,244,.90)
         ),
-
-        url("https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=1800&q=85")
-
+        url("https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?auto=format&fit=crop&w=1800&q=85")
         center/cover;
 }
 
 .encomenda-box h2{
     font-family:'Cormorant Garamond',serif;
-
     color:var(--vinho);
-
     font-size:4rem;
-
     line-height:.9;
 }
 
 .lista{
     border-left:1px solid var(--rosa);
-
     padding-left:30px;
 }
 
@@ -862,103 +650,78 @@ button{
 }
 
 
-/* =========================================================
+/* ==============================
    TERMOS
-========================================================= */
+============================== */
 
 .grid-termos{
     display:grid;
-
     grid-template-columns:1fr 1fr;
-
     gap:12px;
 }
 
 details{
     background:white;
-
     border:1px solid rgba(112,67,86,.10);
-
     padding:18px 20px;
 }
 
 summary{
     cursor:pointer;
-
     font-family:'Cormorant Garamond',serif;
-
     font-size:1.35rem;
-
     color:var(--vinho);
-
     font-weight:600;
 }
 
 details p{
     font-size:.80rem;
-
     margin-top:10px;
 }
 
 
-/* =========================================================
+/* ==============================
    CONTATO
-========================================================= */
+============================== */
 
 .contato-box{
     max-width:700px;
-
     margin:auto;
-
     text-align:center;
-
     padding:60px 30px;
-
     background:white;
-
     box-shadow:0 20px 50px rgba(112,67,86,.08);
-
     border:1px solid rgba(112,67,86,.10);
 }
 
 .contato-box h2{
     font-family:'Cormorant Garamond',serif;
-
     color:var(--vinho);
-
     font-size:3.5rem;
-
     line-height:1;
 }
 
 .numero-whatsapp{
     font-family:'Cormorant Garamond',serif;
-
     font-size:2.2rem;
-
     color:var(--rosa);
-
     margin:15px 0 25px;
 }
 
 
-/* =========================================================
+/* ==============================
    FOOTER
-========================================================= */
+============================== */
 
 footer{
     padding:65px 25px;
-
     text-align:center;
-
     background:#5d3a4b;
-
     color:#fff3f6;
 }
 
 .footer-logo{
     font-family:'Cormorant Garamond',serif;
-
     font-size:2.4rem;
 }
 
@@ -968,38 +731,27 @@ footer p{
 
 footer small{
     opacity:.6;
-
     display:block;
-
     margin-top:18px;
 }
 
 
-/* =========================================================
+/* ==============================
    RESPONSIVO
-========================================================= */
+============================== */
 
 @media(max-width:950px){
 
     .nav-links{
         display:none;
-
         position:absolute;
-
         top:65px;
-
         left:0;
-
         right:0;
-
         padding:20px;
-
         flex-direction:column;
-
         background:rgba(255,250,248,.98);
-
         border-radius:25px;
-
         box-shadow:0 15px 40px rgba(112,67,86,.10);
     }
 
@@ -1027,7 +779,6 @@ footer small{
     .encomenda-box{
         grid-template-columns:1fr;
     }
-
 }
 
 
@@ -1066,7 +817,6 @@ footer small{
 
     .banner-conteudo{
         margin:18px;
-
         padding:30px 25px;
     }
 
@@ -1085,171 +835,113 @@ footer small{
     .numero-whatsapp{
         font-size:1.7rem;
     }
-
 }
-
 </style>
 </head>
 
 
 <body>
 
-
-<!-- =========================================================
-     FLORES
-========================================================= -->
-
 <div class="flores">
-
-<span>✿</span>
-<span>❀</span>
-<span>✿</span>
-<span>❀</span>
-<span>✿</span>
-
+    <span>✿</span>
+    <span>❀</span>
+    <span>✿</span>
+    <span>❀</span>
+    <span>✿</span>
 </div>
 
 
-<!-- =========================================================
-     NAVBAR
-========================================================= -->
-
 <header class="navbar">
 
-<button
-class="logo"
-onclick="abrirPagina('inicio')"
-style="border:0;background:none;cursor:pointer;"
->
-🧶 L'Atelier d'Aline
+<button class="logo" onclick="abrirPagina('inicio')">
+    🧶 L'Atelier d'Aline
 </button>
 
-
-<button
-class="menu"
-onclick="toggleMenu()"
->
-☰
+<button class="menu" onclick="toggleMenu()">
+    ☰
 </button>
-
 
 <nav class="nav-links">
 
-<button
-class="ativo"
-onclick="abrirPagina('inicio',this)"
->
-Início
+<button class="ativo" onclick="abrirPagina('inicio',this)">
+    Início
 </button>
 
-<button
-onclick="abrirPagina('produtos',this)"
->
-Peças
+<button onclick="abrirPagina('produtos',this)">
+    Peças
 </button>
 
-<button
-onclick="abrirPagina('personalizados',this)"
->
-Personalizados
+<button onclick="abrirPagina('personalizados',this)">
+    Personalizados
 </button>
 
-<button
-onclick="abrirPagina('fios',this)"
->
-Fios
+<button onclick="abrirPagina('fios',this)">
+    Fios
 </button>
 
-<button
-onclick="abrirPagina('encomendas',this)"
->
-Encomendas
+<button onclick="abrirPagina('encomendas',this)">
+    Encomendas
 </button>
 
-<button
-onclick="abrirPagina('termos',this)"
->
-Termos
+<button onclick="abrirPagina('termos',this)">
+    Termos
 </button>
 
-<button
-onclick="abrirPagina('contato',this)"
->
-Contato
+<button onclick="abrirPagina('contato',this)">
+    Contato
 </button>
 
 </nav>
-
 </header>
 
 
 
-<!-- =========================================================
+<!-- ======================================================
      INÍCIO
-========================================================= -->
+====================================================== -->
 
-<main
-id="inicio"
-class="pagina ativa"
->
+<main id="inicio" class="pagina ativa">
 
 <section class="hero">
 
 <div class="hero-content">
 
 <p class="eyebrow">
-BIENVENUE • ARTESANATO • CROCHÊ
+    BIENVENUE • ARTESANATO • CROCHÊ
 </p>
 
 <h1>
-
-Um pequeno ateliê,
-
-<br>
-
-<em>
-mil histórias em cada ponto.
-</em>
-
+    Um pequeno ateliê,
+    <br>
+    <em>mil histórias em cada ponto.</em>
 </h1>
 
 <p class="hero-text">
-
-Peças feitas à mão com delicadeza,
-carinho e inspiração francesa.
-
-Cada criação recebe atenção
-especial em cada pequeno detalhe.
-
+    Peças feitas à mão com delicadeza,
+    carinho e inspiração francesa.
+    Cada criação recebe atenção especial
+    em cada pequeno detalhe.
 </p>
-
 
 <div class="botoes">
 
-<button
-class="btn btn-principal"
-onclick="abrirPagina('produtos')"
->
-Ver nossas peças
+<button class="btn btn-principal"
+onclick="abrirPagina('produtos')">
+    Ver nossas peças
 </button>
 
-<a
-class="btn btn-secundario"
+<a class="btn btn-secundario"
 href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Encontrei%20o%20site%20e%20gostaria%20de%20fazer%20uma%20encomenda."
-target="_blank"
->
-Falar com Aline
+target="_blank">
+    Falar com Aline
 </a>
 
 </div>
 
 </div>
 
-
 <div class="hero-frase">
-
-♡ feito à mão, ponto por ponto ♡
-
+    ♡ feito à mão, ponto por ponto ♡
 </div>
 
 </section>
@@ -1260,19 +952,16 @@ Falar com Aline
 <div class="titulo">
 
 <p class="eyebrow">
-NOTRE ATELIER
+    NOTRE ATELIER
 </p>
 
 <h2>
-Artesanato com alma
+    Artesanato com alma
 </h2>
 
 <p>
-
-Um espaço dedicado às peças
-feitas com fios, criatividade
-e muito carinho.
-
+    Um espaço dedicado às peças feitas
+    com fios, criatividade e muito carinho.
 </p>
 
 </div>
@@ -1283,37 +972,27 @@ e muito carinho.
 <div class="sobre-texto">
 
 <h2>
-Olá, eu sou a Aline.
+    Olá, eu sou a Aline.
 </h2>
 
 <br>
 
 <p>
-
-O L'Atelier d'Aline nasceu do
-amor pelo crochê e pela vontade
-de transformar fios simples
-em peças especiais.
-
+    O L'Atelier d'Aline nasceu do amor
+    pelo crochê e da vontade de transformar
+    fios simples em peças especiais.
 </p>
 
 <p>
-
-Aqui, cada criação é feita
-manualmente, respeitando o
-tempo necessário para que
-cada ponto fique bonito.
-
+    Aqui, cada criação é feita manualmente,
+    respeitando o tempo necessário para que
+    cada ponto fique bonito.
 </p>
 
 <p>
-
-Mais do que vender crochê,
-a ideia é criar pequenas
-lembranças, presentes e
-objetos que tragam aconchego
-para o dia a dia.
-
+    Mais do que vender crochê, a ideia é criar
+    pequenas lembranças, presentes e objetos
+    que tragam aconchego para o dia a dia.
 </p>
 
 </div>
@@ -1321,20 +1000,16 @@ para o dia a dia.
 
 <div class="frase">
 
-<span class="aspas">
-“
-</span>
+<span class="aspas">“</span>
 
 <p>
-
-Cada fio começa uma história.
-Cada ponto transforma essa
-história em algo único.
-
+    Cada fio começa uma história.
+    Cada ponto transforma essa história
+    em algo único.
 </p>
 
 <small>
-— Aline ♡
+    — Aline ♡
 </small>
 
 </div>
@@ -1347,17 +1022,17 @@ história em algo único.
 <section class="banner">
 
 <img
-src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1900&q=85"
-alt="Flores">
+src="https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?auto=format&fit=crop&w=1900&q=85"
+alt="Materiais de crochê">
 
 <div class="banner-conteudo">
 
 <p class="eyebrow">
-UNE PETITE COLLECTION
+    UNE PETITE COLLECTION
 </p>
 
 <h2>
-Delicadeza em forma de crochê.
+    Delicadeza em forma de crochê.
 </h2>
 
 </div>
@@ -1368,31 +1043,25 @@ Delicadeza em forma de crochê.
 
 
 
-<!-- =========================================================
+<!-- ======================================================
      PRODUTOS
-========================================================= -->
+====================================================== -->
 
-<main
-id="produtos"
-class="pagina"
->
+<main id="produtos" class="pagina">
 
 <section class="page-header">
 
 <p class="eyebrow">
-NOS CRÉATIONS
+    NOS CRÉATIONS
 </p>
 
 <h1>
-Nossas peças
+    Nossas peças
 </h1>
 
 <p>
-
-Conheça algumas das peças
-que podem fazer parte do
-catálogo da Aline.
-
+    Conheça algumas das peças que podem
+    fazer parte do catálogo da Aline.
 </p>
 
 </section>
@@ -1403,7 +1072,7 @@ catálogo da Aline.
 <div class="produtos">
 
 
-<!-- 1 -->
+<!-- URSINHO -->
 
 <article class="produto">
 
@@ -1411,43 +1080,40 @@ catálogo da Aline.
 
 <img
 src="https://images.unsplash.com/photo-1589652717521-10c0d092dea9?auto=format&fit=crop&w=900&q=85"
-alt="Ursinho artesanal">
+alt="Ursinho de crochê">
 
 </div>
 
 <div class="produto-info">
 
 <span class="categoria">
-Amigurumi
+    Amigurumi
 </span>
 
 <h3>
-Ursinho
+    Ursinho
 </h3>
 
 <p>
-Ursinho artesanal perfeito
-para presentear.
+    Ursinho artesanal perfeito para presentear.
 </p>
 
 <strong class="preco">
-R$ 75,00
+    R$ 75,00
 </strong>
 
-<a
-class="encomendar"
+<a class="encomendar"
 target="_blank"
-href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Gostaria%20de%20encomendar%20um%20ursinho."
->
-Encomendar
+href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Gostaria%20de%20encomendar%20um%20ursinho%20de%20crochê.">
+    Encomendar
 </a>
 
 </div>
-
 </article>
 
 
-<!-- 2 -->
+
+<!-- COELHINHO -->
 
 <article class="produto">
 
@@ -1455,87 +1121,81 @@ Encomendar
 
 <img
 src="https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=900&q=85"
-alt="Amigurumi">
+alt="Coelhinho de crochê">
 
 </div>
 
 <div class="produto-info">
 
 <span class="categoria">
-Amigurumi
+    Amigurumi
 </span>
 
 <h3>
-Coelhinho
+    Coelhinho
 </h3>
 
 <p>
-Delicado e personalizável
-em diferentes cores.
+    Delicado, fofo e personalizável em diferentes cores.
 </p>
 
 <strong class="preco">
-R$ 70,00
+    R$ 70,00
 </strong>
 
-<a
-class="encomendar"
+<a class="encomendar"
 target="_blank"
-href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Gostaria%20de%20encomendar%20um%20coelhinho."
->
-Encomendar
+href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Gostaria%20de%20encomendar%20um%20coelhinho%20de%20crochê.">
+    Encomendar
 </a>
 
 </div>
-
 </article>
 
 
-<!-- 3 -->
+
+<!-- BOLSA -->
 
 <article class="produto">
 
 <div class="produto-img">
 
 <img
-src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=900&q=85"
-alt="Bolsa">
+src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=85"
+alt="Bolsa artesanal">
 
 </div>
 
 <div class="produto-info">
 
 <span class="categoria">
-Acessório
+    Acessório
 </span>
 
 <h3>
-Bolsa de Crochê
+    Bolsa de Crochê
 </h3>
 
 <p>
-Bolsas artesanais para
-diferentes ocasiões.
+    Bolsas artesanais para diferentes ocasiões.
 </p>
 
 <strong class="preco">
-A partir de R$ 85,00
+    A partir de R$ 85,00
 </strong>
 
-<a
-class="encomendar"
+<a class="encomendar"
 target="_blank"
-href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Gostaria%20de%20saber%20sobre%20as%20bolsas."
->
-Encomendar
+href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Gostaria%20de%20saber%20sobre%20as%20bolsas%20de%20crochê.">
+    Encomendar
 </a>
 
 </div>
-
 </article>
 
 
-<!-- 4 -->
+
+<!-- SOUSPLAT -->
 
 <article class="produto">
 
@@ -1550,36 +1210,33 @@ alt="Sousplat artesanal">
 <div class="produto-info">
 
 <span class="categoria">
-Decoração
+    Decoração
 </span>
 
 <h3>
-Sousplat
+    Sousplat
 </h3>
 
 <p>
-Uma peça delicada para
-deixar sua mesa especial.
+    Uma peça delicada para deixar sua mesa especial.
 </p>
 
 <strong class="preco">
-R$ 22,00
+    R$ 22,00
 </strong>
 
-<a
-class="encomendar"
+<a class="encomendar"
 target="_blank"
-href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Gostaria%20de%20encomendar%20sousplats."
->
-Encomendar
+href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Gostaria%20de%20encomendar%20sousplats%20de%20crochê.">
+    Encomendar
 </a>
 
 </div>
-
 </article>
 
 
-<!-- 5 -->
+
+<!-- CAMINHO DE MESA -->
 
 <article class="produto">
 
@@ -1587,43 +1244,40 @@ Encomendar
 
 <img
 src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=900&q=85"
-alt="Mesa decorada">
+alt="Decoração artesanal">
 
 </div>
 
 <div class="produto-info">
 
 <span class="categoria">
-Decoração
+    Decoração
 </span>
 
 <h3>
-Caminho de Mesa
+    Caminho de Mesa
 </h3>
 
 <p>
-Elegância artesanal para
-sua casa.
+    Elegância artesanal para sua casa.
 </p>
 
 <strong class="preco">
-A partir de R$ 90,00
+    A partir de R$ 90,00
 </strong>
 
-<a
-class="encomendar"
+<a class="encomendar"
 target="_blank"
-href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Gostaria%20de%20saber%20sobre%20os%20caminhos%20de%20mesa."
->
-Encomendar
+href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Gostaria%20de%20saber%20sobre%20os%20caminhos%20de%20mesa.">
+    Encomendar
 </a>
 
 </div>
-
 </article>
 
 
-<!-- 6 -->
+
+<!-- PUXA-SACO -->
 
 <article class="produto">
 
@@ -1631,43 +1285,40 @@ Encomendar
 
 <img
 src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=900&q=85"
-alt="Cozinha">
+alt="Peça artesanal para cozinha">
 
 </div>
 
 <div class="produto-info">
 
 <span class="categoria">
-Cozinha
+    Cozinha
 </span>
 
 <h3>
-Puxa-Saco
+    Puxa-Saco
 </h3>
 
 <p>
-Uma forma bonita de
-organizar sua cozinha.
+    Uma forma bonita de organizar sua cozinha.
 </p>
 
 <strong class="preco">
-R$ 55,00
+    R$ 55,00
 </strong>
 
-<a
-class="encomendar"
+<a class="encomendar"
 target="_blank"
-href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Gostaria%20de%20encomendar%20um%20puxa-saco."
->
-Encomendar
+href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Gostaria%20de%20encomendar%20um%20puxa-saco.">
+    Encomendar
 </a>
 
 </div>
-
 </article>
 
 
-<!-- 7 -->
+
+<!-- KIT BEBÊ -->
 
 <article class="produto">
 
@@ -1675,43 +1326,40 @@ Encomendar
 
 <img
 src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=900&q=85"
-alt="Peça para bebê">
+alt="Peça artesanal para bebê">
 
 </div>
 
 <div class="produto-info">
 
 <span class="categoria">
-Bebês
+    Bebês
 </span>
 
 <h3>
-Kit Bebê
+    Kit Bebê
 </h3>
 
 <p>
-Uma opção delicada
-para presentear.
+    Uma opção delicada para presentear.
 </p>
 
 <strong class="preco">
-R$ 75,00
+    R$ 75,00
 </strong>
 
-<a
-class="encomendar"
+<a class="encomendar"
 target="_blank"
-href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Gostaria%20de%20saber%20sobre%20o%20kit bebê."
->
-Encomendar
+href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Gostaria%20de%20saber%20sobre%20o%20kit%20bebê.">
+    Encomendar
 </a>
 
 </div>
-
 </article>
 
 
-<!-- 8 -->
+
+<!-- FLORES -->
 
 <article class="produto">
 
@@ -1719,43 +1367,40 @@ Encomendar
 
 <img
 src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=900&q=85"
-alt="Flores">
+alt="Flores artesanais">
 
 </div>
 
 <div class="produto-info">
 
 <span class="categoria">
-Decoração
+    Decoração
 </span>
 
 <h3>
-Flores de Crochê
+    Flores de Crochê
 </h3>
 
 <p>
-Flores artesanais para
-presentes e decoração.
+    Flores artesanais para presentes e decoração.
 </p>
 
 <strong class="preco">
-A partir de R$ 15,00
+    A partir de R$ 15,00
 </strong>
 
-<a
-class="encomendar"
+<a class="encomendar"
 target="_blank"
-href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Gostaria%20de%20encomendar%20flores de crochê."
->
-Encomendar
+href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Gostaria%20de%20encomendar%20flores%20de%20crochê.">
+    Encomendar
 </a>
 
 </div>
-
 </article>
 
 
-<!-- 9 -->
+
+<!-- CESTO -->
 
 <article class="produto">
 
@@ -1763,72 +1408,62 @@ Encomendar
 
 <img
 src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=900&q=85"
-alt="Artesanato">
+alt="Cesto artesanal">
 
 </div>
 
 <div class="produto-info">
 
 <span class="categoria">
-Decoração
+    Decoração
 </span>
 
 <h3>
-Cesto de Crochê
+    Cesto de Crochê
 </h3>
 
 <p>
-Para organizar pequenos
-objetos com charme.
+    Para organizar pequenos objetos com charme.
 </p>
 
 <strong class="preco">
-A partir de R$ 45,00
+    A partir de R$ 45,00
 </strong>
 
-<a
-class="encomendar"
+<a class="encomendar"
 target="_blank"
-href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Gostaria%20de%20saber%20sobre%20os%20cestos."
->
-Encomendar
+href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Gostaria%20de%20saber%20sobre%20os%20cestos%20de%20crochê.">
+    Encomendar
 </a>
 
 </div>
-
 </article>
-
 
 </div>
 
 </section>
-
 </main>
 
 
 
-<!-- =========================================================
+<!-- ======================================================
      PERSONALIZADOS
-========================================================= -->
+====================================================== -->
 
-<main
-id="personalizados"
-class="pagina"
->
+<main id="personalizados" class="pagina">
 
 <section class="page-header">
 
 <p class="eyebrow">
-SUR MESURE
+    SUR MESURE
 </p>
 
 <h1>
-Personalizados
+    Personalizados
 </h1>
 
 <p>
-Sua ideia pode virar uma
-peça única de crochê.
+    Sua ideia pode virar uma peça única de crochê.
 </p>
 
 </section>
@@ -1841,35 +1476,28 @@ peça única de crochê.
 <div class="sobre-texto">
 
 <h2>
-Você imagina.
-Aline cria.
+    Você imagina.
+    <br>
+    Aline cria.
 </h2>
 
 <br>
 
 <p>
-
-Quer uma determinada cor?
-Um personagem?
-Um tamanho diferente?
-Uma decoração específica?
-
+    Quer uma determinada cor?
+    Um personagem? Um tamanho diferente?
+    Uma decoração específica?
 </p>
 
 <p>
-
-Conte sua ideia pelo WhatsApp.
-Aline pode conversar com você
-sobre cores, tamanho, materiais
-e detalhes da peça.
-
+    Conte sua ideia pelo WhatsApp.
+    Aline pode conversar com você sobre
+    cores, tamanho, materiais e detalhes da peça.
 </p>
 
 <p>
-
-O orçamento é definido antes
-do início da produção.
-
+    O orçamento é definido antes do início
+    da produção.
 </p>
 
 <br>
@@ -1877,9 +1505,8 @@ do início da produção.
 <a
 class="btn btn-principal"
 target="_blank"
-href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Tenho%20uma%20ideia%20para%20uma%20peça%20personalizada."
->
-Criar minha peça
+href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Tenho%20uma%20ideia%20para%20uma%20peça%20personalizada.">
+    Criar minha peça
 </a>
 
 </div>
@@ -1887,20 +1514,15 @@ Criar minha peça
 
 <div class="frase">
 
-<span class="aspas">
-“
-</span>
+<span class="aspas">“</span>
 
 <p>
-
-Uma peça feita especialmente
-para alguém carrega muito
-mais do que fios.
-
+    Uma peça feita especialmente para alguém
+    carrega muito mais do que fios.
 </p>
 
 <small>
-L'Atelier d'Aline
+    L'Atelier d'Aline
 </small>
 
 </div>
@@ -1913,18 +1535,17 @@ L'Atelier d'Aline
 <section class="banner">
 
 <img
-src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1800&q=85"
-alt="Flores">
+src="https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?auto=format&fit=crop&w=1800&q=85"
+alt="Fios e artesanato">
 
 <div class="banner-conteudo">
 
 <p class="eyebrow">
-VOTRE HISTOIRE
+    VOTRE HISTOIRE
 </p>
 
 <h2>
-Transforme uma ideia
-em algo feito à mão.
+    Transforme uma ideia em algo feito à mão.
 </h2>
 
 </div>
@@ -1937,11 +1558,11 @@ em algo feito à mão.
 <div class="titulo">
 
 <p class="eyebrow">
-COMMENT ÇA MARCHE?
+    COMMENT ÇA MARCHE?
 </p>
 
 <h2>
-Como funciona?
+    Como funciona?
 </h2>
 
 </div>
@@ -1949,78 +1570,29 @@ Como funciona?
 
 <div class="etapas">
 
+<div class="etapa">
+<div class="numero">01</div>
+<h3>Ideia</h3>
+<p>Conte o que você gostaria de criar.</p>
+</div>
 
 <div class="etapa">
-
-<div class="numero">
-01
+<div class="numero">02</div>
+<h3>Detalhes</h3>
+<p>Escolha cores, tamanho, fio e outros detalhes.</p>
 </div>
-
-<h3>
-Ideia
-</h3>
-
-<p>
-Conte o que você gostaria
-de criar.
-</p>
-
-</div>
-
 
 <div class="etapa">
-
-<div class="numero">
-02
+<div class="numero">03</div>
+<h3>Produção</h3>
+<p>A peça é produzida artesanalmente.</p>
 </div>
-
-<h3>
-Detalhes
-</h3>
-
-<p>
-Escolha cores, tamanho,
-fio e outros detalhes.
-</p>
-
-</div>
-
 
 <div class="etapa">
-
-<div class="numero">
-03
+<div class="numero">04</div>
+<h3>Entrega</h3>
+<p>Combinamos a entrega ou retirada.</p>
 </div>
-
-<h3>
-Produção
-</h3>
-
-<p>
-A peça é produzida
-artesanalmente.
-</p>
-
-</div>
-
-
-<div class="etapa">
-
-<div class="numero">
-04
-</div>
-
-<h3>
-Entrega
-</h3>
-
-<p>
-Combinamos a entrega
-ou retirada.
-</p>
-
-</div>
-
 
 </div>
 
@@ -2030,28 +1602,25 @@ ou retirada.
 
 
 
-<!-- =========================================================
+<!-- ======================================================
      FIOS
-========================================================= -->
+====================================================== -->
 
-<main
-id="fios"
-class="pagina"
->
+<main id="fios" class="pagina">
 
 <section class="page-header">
 
 <p class="eyebrow">
-LES FILS
+    LES FILS
 </p>
 
 <h1>
-Tipos de fios
+    Tipos de fios
 </h1>
 
 <p>
-Conheça alguns dos materiais
-utilizados no universo do crochê.
+    Conheça alguns dos materiais utilizados
+    no universo do crochê.
 </p>
 
 </section>
@@ -2062,17 +1631,16 @@ utilizados no universo do crochê.
 <div class="titulo">
 
 <p class="eyebrow">
-MATIÈRES
+    MATIÈRES
 </p>
 
 <h2>
-Escolhendo o fio
+    Escolhendo o fio
 </h2>
 
 <p>
-Cada fio possui características
-diferentes e pode ser indicado
-para diferentes tipos de peças.
+    Cada fio possui características diferentes
+    e pode ser indicado para diferentes tipos de peças.
 </p>
 
 </div>
@@ -2080,150 +1648,78 @@ para diferentes tipos de peças.
 
 <div class="grid-fios">
 
-
 <div class="fio">
-
-<span class="fio-icon">
-🌸
-</span>
-
-<h3>
-Anne
-</h3>
-
+<span class="fio-icon">🌸</span>
+<h3>Anne</h3>
 <p>
-Fio fino de algodão.
-É versátil e muito utilizado
-em peças delicadas.
+    Fio fino de algodão. Versátil e muito
+    utilizado em peças delicadas.
 </p>
-
-<strong>
-R$ 20 – R$ 29
-</strong>
-
+<strong>R$ 20 – R$ 29</strong>
 </div>
 
 
 <div class="fio">
-
-<span class="fio-icon">
-✨
-</span>
-
-<h3>
-Charme
-</h3>
-
+<span class="fio-icon">✨</span>
+<h3>Charme</h3>
 <p>
-Fio de algodão versátil
-com boa definição dos pontos.
+    Fio de algodão versátil com boa
+    definição dos pontos.
 </p>
-
-<strong>
-R$ 17 – R$ 27
-</strong>
-
+<strong>R$ 17 – R$ 27</strong>
 </div>
 
 
 <div class="fio">
-
-<span class="fio-icon">
-🧸
-</span>
-
-<h3>
-Amigurumi
-</h3>
-
+<span class="fio-icon">🧸</span>
+<h3>Amigurumi</h3>
 <p>
-Muito utilizado para
-bichinhos, personagens
-e miniaturas.
+    Muito utilizado para bichinhos,
+    personagens e miniaturas.
 </p>
-
-<strong>
-R$ 14 – R$ 25
-</strong>
-
+<strong>R$ 14 – R$ 25</strong>
 </div>
 
 
 <div class="fio">
-
-<span class="fio-icon">
-☁️
-</span>
-
-<h3>
-Pelúcia
-</h3>
-
+<span class="fio-icon">☁️</span>
+<h3>Pelúcia</h3>
 <p>
-Fio macio para criações
-fofinhas e aconchegantes.
+    Fio macio para criações fofinhas
+    e aconchegantes.
 </p>
-
-<strong>
-R$ 15 – R$ 23
-</strong>
-
+<strong>R$ 15 – R$ 23</strong>
 </div>
 
 
 <div class="fio">
-
-<span class="fio-icon">
-🧵
-</span>
-
-<h3>
-Fio de Malha
-</h3>
-
+<span class="fio-icon">🧵</span>
+<h3>Fio de Malha</h3>
 <p>
-Mais encorpado, ótimo para
-bolsas, cestos e decoração.
+    Mais encorpado, ótimo para bolsas,
+    cestos e decoração.
 </p>
-
-<strong>
-R$ 18 – R$ 40
-</strong>
-
+<strong>R$ 18 – R$ 40</strong>
 </div>
 
 
 <div class="fio">
-
-<span class="fio-icon">
-🌿
-</span>
-
-<h3>
-Barbante
-</h3>
-
+<span class="fio-icon">🌿</span>
+<h3>Barbante</h3>
 <p>
-Resistente e bastante usado
-em tapetes e decoração.
+    Resistente e bastante usado
+    em tapetes e decoração.
 </p>
-
-<strong>
-R$ 20 – R$ 35
-</strong>
-
+<strong>R$ 20 – R$ 35</strong>
 </div>
-
 
 </div>
 
 
 <p class="aviso">
-
-Valores aproximados de mercado.
-Podem variar conforme marca,
-peso, cor e loja.
-
+    Valores aproximados de mercado.
+    Podem variar conforme marca, peso,
+    cor e loja.
 </p>
 
 </section>
@@ -2232,28 +1728,24 @@ peso, cor e loja.
 
 
 
-<!-- =========================================================
+<!-- ======================================================
      ENCOMENDAS
-========================================================= -->
+====================================================== -->
 
-<main
-id="encomendas"
-class="pagina"
->
+<main id="encomendas" class="pagina">
 
 <section class="page-header">
 
 <p class="eyebrow">
-COMMANDES
+    COMMANDES
 </p>
 
 <h1>
-Faça sua encomenda
+    Faça sua encomenda
 </h1>
 
 <p>
-Vamos transformar sua ideia
-em uma peça artesanal.
+    Vamos transformar sua ideia em uma peça artesanal.
 </p>
 
 </section>
@@ -2266,23 +1758,18 @@ em uma peça artesanal.
 <div>
 
 <p class="eyebrow">
-L'ATELIER D'ALINE
+    L'ATELIER D'ALINE
 </p>
 
 <h2>
-Seu próximo
-projeto começa
-aqui.
+    Seu próximo projeto começa aqui.
 </h2>
 
 <br>
 
 <p>
-
-Para fazer uma encomenda,
-entre em contato com a Aline
-pelo WhatsApp.
-
+    Para fazer uma encomenda,
+    entre em contato com a Aline pelo WhatsApp.
 </p>
 
 <br>
@@ -2290,9 +1777,8 @@ pelo WhatsApp.
 <a
 class="btn btn-principal"
 target="_blank"
-href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Gostaria%20de%20fazer%20uma%20encomenda."
->
-💌 Falar com Aline
+href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Gostaria%20de%20fazer%20uma%20encomenda.">
+    💌 Falar com Aline
 </a>
 
 </div>
@@ -2300,29 +1786,12 @@ href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Gostaria%20de%20fazer%2
 
 <div class="lista">
 
-<p>
-🎨 Escolha as cores
-</p>
-
-<p>
-🧶 Escolha o fio
-</p>
-
-<p>
-📏 Combine o tamanho
-</p>
-
-<p>
-🌷 Escolha o modelo
-</p>
-
-<p>
-✨ Defina os detalhes
-</p>
-
-<p>
-📦 Combine a entrega
-</p>
+<p>🎨 Escolha as cores</p>
+<p>🧶 Escolha o fio</p>
+<p>📏 Combine o tamanho</p>
+<p>🌷 Escolha o modelo</p>
+<p>✨ Defina os detalhes</p>
+<p>📦 Combine a entrega</p>
 
 </div>
 
@@ -2336,11 +1805,11 @@ href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Gostaria%20de%20fazer%2
 <div class="titulo">
 
 <p class="eyebrow">
-ÉTAPES
+    ÉTAPES
 </p>
 
 <h2>
-Do pedido à sua casa
+    Do pedido à sua casa
 </h2>
 
 </div>
@@ -2348,78 +1817,29 @@ Do pedido à sua casa
 
 <div class="etapas">
 
+<div class="etapa">
+<div class="numero">01</div>
+<h3>Contato</h3>
+<p>Você envia uma mensagem pelo WhatsApp.</p>
+</div>
 
 <div class="etapa">
-
-<div class="numero">
-01
+<div class="numero">02</div>
+<h3>Orçamento</h3>
+<p>Aline confirma os detalhes e o valor.</p>
 </div>
-
-<h3>
-Contato
-</h3>
-
-<p>
-Você envia uma mensagem
-pelo WhatsApp.
-</p>
-
-</div>
-
 
 <div class="etapa">
-
-<div class="numero">
-02
+<div class="numero">03</div>
+<h3>Produção</h3>
+<p>A peça começa a ser produzida à mão.</p>
 </div>
-
-<h3>
-Orçamento
-</h3>
-
-<p>
-Aline confirma os detalhes
-e o valor.
-</p>
-
-</div>
-
 
 <div class="etapa">
-
-<div class="numero">
-03
+<div class="numero">04</div>
+<h3>Entrega</h3>
+<p>Depois de pronta, combinamos a entrega.</p>
 </div>
-
-<h3>
-Produção
-</h3>
-
-<p>
-A peça começa a ser
-produzida à mão.
-</p>
-
-</div>
-
-
-<div class="etapa">
-
-<div class="numero">
-04
-</div>
-
-<h3>
-Entrega
-</h3>
-
-<p>
-Depois de pronta,
-combinamos a entrega.
-</p>
-
-</div>
-
 
 </div>
 
@@ -2429,28 +1849,24 @@ combinamos a entrega.
 
 
 
-<!-- =========================================================
+<!-- ======================================================
      TERMOS
-========================================================= -->
+====================================================== -->
 
-<main
-id="termos"
-class="pagina"
->
+<main id="termos" class="pagina">
 
 <section class="page-header">
 
 <p class="eyebrow">
-CONDITIONS
+    CONDITIONS
 </p>
 
 <h1>
-Termos e condições
+    Termos e condições
 </h1>
 
 <p>
-Informações importantes
-sobre as encomendas.
+    Informações importantes sobre as encomendas.
 </p>
 
 </section>
@@ -2462,163 +1878,90 @@ sobre as encomendas.
 
 
 <details open>
-
-<summary>
-🧶 Encomendas
-</summary>
+<summary>🧶 Encomendas</summary>
 
 <p>
-
-As peças são produzidas
-artesanalmente e dependem
-da disponibilidade dos materiais
-e da agenda de produção.
-
+    As peças são produzidas artesanalmente e dependem
+    da disponibilidade dos materiais e da agenda de produção.
 </p>
-
 </details>
 
 
 <details>
-
-<summary>
-🎨 Personalização
-</summary>
+<summary>🎨 Personalização</summary>
 
 <p>
-
-Cores, tamanhos, modelos
-e outros detalhes podem ser
-combinados antes do início
-da produção.
-
+    Cores, tamanhos, modelos e outros detalhes podem
+    ser combinados antes do início da produção.
 </p>
-
 </details>
 
 
 <details>
-
-<summary>
-💰 Valores e pagamento
-</summary>
+<summary>💰 Valores e pagamento</summary>
 
 <p>
-
-O valor final da encomenda
-será informado antes do início
-da produção.
-
-Nenhuma produção personalizada
-deve começar sem a confirmação
-do pedido e das condições
-combinadas.
-
+    O valor final da encomenda será informado antes
+    do início da produção. Nenhuma produção personalizada
+    deve começar sem a confirmação do pedido e das
+    condições combinadas.
 </p>
-
 </details>
 
 
 <details>
-
-<summary>
-⏰ Prazo
-</summary>
+<summary>⏰ Prazo</summary>
 
 <p>
-
-Como cada peça é feita à mão,
-o prazo pode variar conforme
-a complexidade da encomenda
-e a quantidade de pedidos
-em andamento.
-
+    Como cada peça é feita à mão, o prazo pode variar
+    conforme a complexidade da encomenda e a quantidade
+    de pedidos em andamento.
 </p>
-
 </details>
 
 
 <details>
-
-<summary>
-📦 Entrega
-</summary>
+<summary>📦 Entrega</summary>
 
 <p>
-
-A forma de entrega ou retirada
-será combinada diretamente
-com o cliente.
-
-Quando houver frete,
-ele poderá ser cobrado
-separadamente.
-
+    A forma de entrega ou retirada será combinada
+    diretamente com o cliente. Quando houver frete,
+    ele poderá ser cobrado separadamente.
 </p>
-
 </details>
 
 
 <details>
-
-<summary>
-🧵 Produtos artesanais
-</summary>
+<summary>🧵 Produtos artesanais</summary>
 
 <p>
-
-Pequenas diferenças de tamanho,
-formato, pontos e acabamento
-são naturais em produtos feitos
-à mão e fazem parte da
-singularidade de cada peça.
-
+    Pequenas diferenças de tamanho, formato, pontos
+    e acabamento são naturais em produtos feitos à mão
+    e fazem parte da singularidade de cada peça.
 </p>
-
 </details>
 
 
 <details>
-
-<summary>
-🔄 Problemas com a peça
-</summary>
+<summary>🔄 Problemas com a peça</summary>
 
 <p>
-
-Caso exista algum problema
-relacionado à produção,
-o cliente deverá entrar em
-contato para que a situação
-seja analisada e uma solução
-possa ser encontrada.
-
+    Caso exista algum problema relacionado à produção,
+    o cliente deverá entrar em contato para que a situação
+    seja analisada e uma solução possa ser encontrada.
 </p>
-
 </details>
 
 
 <details>
-
-<summary>
-📸 Divulgação
-</summary>
+<summary>📸 Divulgação</summary>
 
 <p>
-
-Fotos de peças produzidas
-podem ser utilizadas para
-divulgação do ateliê.
-
-Caso o cliente não queira
-que sua encomenda seja
-divulgada, poderá informar
-previamente.
-
+    Fotos de peças produzidas podem ser utilizadas para
+    divulgação do ateliê. Caso o cliente não queira que
+    sua encomenda seja divulgada, poderá informar previamente.
 </p>
-
 </details>
-
 
 </div>
 
@@ -2628,28 +1971,24 @@ previamente.
 
 
 
-<!-- =========================================================
+<!-- ======================================================
      CONTATO
-========================================================= -->
+====================================================== -->
 
-<main
-id="contato"
-class="pagina"
->
+<main id="contato" class="pagina">
 
 <section class="page-header">
 
 <p class="eyebrow">
-CONTACT
+    CONTACT
 </p>
 
 <h1>
-Entre em contato
+    Entre em contato
 </h1>
 
 <p>
-Tem alguma dúvida?
-Fale diretamente com a Aline.
+    Tem alguma dúvida? Fale diretamente com a Aline.
 </p>
 
 </section>
@@ -2660,38 +1999,30 @@ Fale diretamente com a Aline.
 <div class="contato-box">
 
 <p class="eyebrow">
-L'ATELIER D'ALINE
+    L'ATELIER D'ALINE
 </p>
 
 <h2>
-Vamos criar algo bonito?
+    Vamos criar algo bonito?
 </h2>
 
 <p>
-
-Para consultar preços,
-disponibilidade, cores,
-modelos ou fazer uma encomenda,
-mande uma mensagem.
-
+    Para consultar preços, disponibilidade,
+    cores, modelos ou fazer uma encomenda,
+    mande uma mensagem.
 </p>
 
 
 <div class="numero-whatsapp">
-
-+55 (41) 9567-7131
-
+    +55 (41) 9567-7131
 </div>
 
 
 <a
 class="btn btn-principal"
 target="_blank"
-href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Encontrei%20o%20site%20do%20L'Atelier%20d'Aline%20e%20gostaria%20de%20saber%20mais."
->
-
-💬 Abrir WhatsApp
-
+href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Encontrei%20o%20site%20do%20L'Atelier%20d'Aline%20e%20gostaria%20de%20saber%20mais.">
+    💬 Abrir WhatsApp
 </a>
 
 </div>
@@ -2702,17 +2033,17 @@ href="https://wa.me/554195677131?text=Olá%2C%20Aline!%20Encontrei%20o%20site%20
 <section class="banner">
 
 <img
-src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1800&q=85"
-alt="Flores">
+src="https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?auto=format&fit=crop&w=1800&q=85"
+alt="Fios de crochê">
 
 <div class="banner-conteudo">
 
 <p class="eyebrow">
-À BIENTÔT
+    À BIENTÔT
 </p>
 
 <h2>
-Até logo! ♡
+    Até logo! ♡
 </h2>
 
 </div>
@@ -2723,26 +2054,22 @@ Até logo! ♡
 
 
 
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
 <footer>
 
 <div class="footer-logo">
-🧶 L'Atelier d'Aline
+    🧶 L'Atelier d'Aline
 </div>
 
 <p>
-Feito à mão, ponto por ponto. ♡
+    Feito à mão, ponto por ponto. ♡
 </p>
 
 <p>
-📱 +55 (41) 9567-7131
+    📱 +55 (41) 9567-7131
 </p>
 
 <small>
-© 2026 L'Atelier d'Aline • Todos os direitos reservados.
+    © 2026 L'Atelier d'Aline • Todos os direitos reservados.
 </small>
 
 </footer>
@@ -2751,65 +2078,38 @@ Feito à mão, ponto por ponto. ♡
 
 <script>
 
-/* =========================================================
-   TROCA DE ABAS
-========================================================= */
+function abrirPagina(nome,botao){
 
-function abrirPagina(nome, botao){
-
-    const paginas =
-        document.querySelectorAll(".pagina");
+    const paginas=document.querySelectorAll(".pagina");
 
     paginas.forEach(function(pagina){
-
         pagina.classList.remove("ativa");
-
     });
 
-
-    const pagina =
-        document.getElementById(nome);
+    const pagina=document.getElementById(nome);
 
     if(pagina){
-
         pagina.classList.add("ativa");
-
     }
 
-
-    const botoes =
-        document.querySelectorAll(".nav-links button");
+    const botoes=document.querySelectorAll(".nav-links button");
 
     botoes.forEach(function(btn){
-
         btn.classList.remove("ativo");
-
     });
 
-
     if(botao){
-
         botao.classList.add("ativo");
-
     }
 
-
-    document
-        .querySelector(".nav-links")
-        .classList.remove("aberto");
-
+    document.querySelector(".nav-links").classList.remove("aberto");
 
     window.scrollTo({
         top:0,
         behavior:"smooth"
     });
-
 }
 
-
-/* =========================================================
-   MENU MOBILE
-========================================================= */
 
 function toggleMenu(){
 
@@ -2820,25 +2120,16 @@ function toggleMenu(){
 }
 
 
-/* =========================================================
-   FECHAR MENU AO CLICAR FORA
-========================================================= */
-
 document.addEventListener("click",function(event){
 
-    const nav =
-        document.querySelector(".nav-links");
-
-    const menu =
-        document.querySelector(".menu");
+    const nav=document.querySelector(".nav-links");
+    const menu=document.querySelector(".menu");
 
     if(
         !nav.contains(event.target) &&
         !menu.contains(event.target)
     ){
-
         nav.classList.remove("aberto");
-
     }
 
 });
